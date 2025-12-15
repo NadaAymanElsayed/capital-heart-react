@@ -5,17 +5,25 @@ interface ButtonProps {
   href: string;
   children: ReactNode;
   primary?: boolean;
+  className?: string;
 }
 
-export default function Button({ href, children, primary = false }: ButtonProps) {
+export default function Button({
+  href,
+  children,
+  primary = false,
+  className = "", 
+}: ButtonProps) {
   const baseClass = "px-6 py-3 rounded-lg font-semibold shadow-lg transition";
-  const colorClass = primary 
+  const colorClass = primary
     ? "bg-orange-500 hover:bg-black text-white"
     : "bg-black hover:bg-orange-500 text-white";
 
   return (
-    <Link href={href} className={`${baseClass} ${colorClass}`}>
+    <Link href={href} className={`${baseClass} ${colorClass} ${className}`}>
       {children}
     </Link>
   );
 }
+
+

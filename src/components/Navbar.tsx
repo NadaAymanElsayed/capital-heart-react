@@ -13,11 +13,13 @@ export default function Navbar() {
    
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/assets/logoBlack.png"
-            width={225}
-            height={47}
-            alt="Logo"
-          />
+  src="/assets/logoBlack.png"
+  width={120}           
+  height={38}
+  className="md:w-[225px] md:h-[47px]" 
+  alt="Logo"
+/>
+
         </Link>
 
         <div className="hidden md:flex items-center flex-1 justify-center">
@@ -70,25 +72,25 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white px-6 py-4 shadow-lg space-y-4">
+        <div className="md:hidden bg-black px-6 py-4 shadow-lg space-y-4">
 
-          <Link href="/" onClick={() => setOpen(false)} className="block text-gray-700 font-medium hover:text-[#FB8C00]">
+          <Link href="/" onClick={() => setOpen(false)} className="block text-white font-medium hover:text-[#FB8C00]">
             Home
           </Link>
 
-          <Link href="/about" onClick={() => setOpen(false)} className="block text-gray-700 font-medium hover:text-[#FB8C00]">
+          <Link href="/about" onClick={() => setOpen(false)} className="block text-white font-medium hover:text-[#FB8C00]">
             About
           </Link>
 
-          <Link href="/services" onClick={() => setOpen(false)} className="block text-gray-700 font-medium hover:text-[#FB8C00]">
+          <Link href="/services" onClick={() => setOpen(false)} className="block text-white font-medium hover:text-[#FB8C00]">
             Services
           </Link>
 
-          <Link href="/doctors" onClick={() => setOpen(false)} className="block text-gray-700 font-medium hover:text-[#FB8C00]">
+          <Link href="/doctors" onClick={() => setOpen(false)} className="block text-white font-medium hover:text-[#FB8C00]">
             Doctors
           </Link>
 
-          <Link href="/contact" onClick={() => setOpen(false)} className="block text-gray-700 font-medium hover:text-[#FB8C00]">
+          <Link href="/contact" onClick={() => setOpen(false)} className="block text-white font-medium hover:text-[#FB8C00]">
             Contact
           </Link>
 

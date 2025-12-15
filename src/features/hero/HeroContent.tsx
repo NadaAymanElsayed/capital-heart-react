@@ -19,10 +19,21 @@ export default function HeroContent() {
           backend products. Continually whiteboard user-centric data.
         </p>
 
-        <div className="flex gap-4 mt-4">
-          <Button href="#services">Discover More</Button>
-          <Button href="#appointment" primary>Book an Appointment</Button>
-        </div>
+     <div className="flex gap-2 sm:gap-4 mt-4">
+  <Button href="#services"
+   className="text-xs sm:text-sm px-3 py-2">
+    Discover More
+  </Button>
+
+  <Button
+    href="#appointment"
+    primary
+    className="text-xs sm:text-sm px-3 py-2"
+  >
+    Book an Appointment
+  </Button>
+</div>
+
       </div>
     </div>
   );
