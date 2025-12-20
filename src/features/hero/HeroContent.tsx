@@ -25,13 +25,14 @@ export default function HeroContent() {
     Discover More
   </Button>
 
-  <Button
-    href="#appointment"
-    primary
-    className="text-xs sm:text-sm px-3 py-2"
-  >
-    Book an Appointment
-  </Button>
+<Button
+  href="#appointment"
+  variant="primary"
+  className="text-xs sm:text-sm px-3 py-2"
+>
+  Book an Appointment
+</Button>
+
 </div>
 
       </div>

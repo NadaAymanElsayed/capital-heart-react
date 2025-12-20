@@ -30,14 +30,12 @@ export default function Section3Content() {
   ];
 
   return (
-    <div className="container mx-auto relative z-10 py-20 px-4 sm:px-10">
+    <div className="container mx-auto relative z-10 py-20 px-4 sm:px-10 overflow-x-hidden">
       
-      {/* grid on desktop, scrollable row on mobile */}
-      <div className="flex flex-row overflow-x-auto gap-6 md:grid md:grid-cols-5 md:gap-6 pb-4">
+<div className="flex flex-row overflow-x-auto md:overflow-x-hidden gap-4 md:grid md:grid-cols-5 md:gap-3 pb-4">
 
-        {/* 4 cards */}
         {cards.map((card, index) => (
-          <div key={index} className="flex-shrink-0 w-64 md:w-auto">
+          <div key={index} className="flex-shrink-0 w-64 md:w-full">
             <Section3Card
               image={card.image}
               subtitle={card.subtitle}
@@ -47,8 +45,8 @@ export default function Section3Content() {
           </div>
         ))}
 
-        {/* Right box */}
-        <div className="flex-shrink-0 w-64 md:w-auto">
+        {/* Info box in same row */}
+        <div className="flex-shrink-0 w-64 md:w-full">
           <Section3InfoBox />
         </div>
 
@@ -56,5 +54,3 @@ export default function Section3Content() {
     </div>
   );
 }
-
-

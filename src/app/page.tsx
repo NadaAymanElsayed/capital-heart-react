@@ -1,13 +1,17 @@
 import Section2 from "@/features/section2/Section2";
 import HeroSection from "../features/hero/HeroSection";
 import Section3 from "@/features/section3/Section3";
+import DoctorHero from "@/features/section4-5/section4";
+import HelpSection from "@/features/section4-5/section5";
 
 export default function Home() {
   return (
-    <main>
+    <main   className="overflow-x-hidden">
       <HeroSection />
        <Section2 />
        <Section3/>
+      <DoctorHero/>
+      <HelpSection/>
     </main>
   );
 }
