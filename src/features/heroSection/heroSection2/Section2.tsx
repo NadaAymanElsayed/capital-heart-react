@@ -1,4 +1,4 @@
-import Section2Background from "./Section2Background";
+import Section2Background from "./Hero2Background";
 import Section2Content from "./Section2Content";
 
 export default function Section2() {
