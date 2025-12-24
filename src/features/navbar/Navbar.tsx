@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import NavbarLinks from "./NavbarLinks";
 import MobileMenu from "./MobileMenu";
-import Button from "../../components/Button";
 import Link from "next/link";
+import Button from "@/components/Button";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,9 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex">
-          <Button href="/appointment" primary>Book Appointment</Button>
+          <Button href="/appointment" variant="primary">
+            Book Appointment
+          </Button>
         </div>
 
         <button className="md:hidden text-white" onClick={() => setOpen(!open)}>
