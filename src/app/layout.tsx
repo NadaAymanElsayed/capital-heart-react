@@ -1,20 +1,18 @@
-// app/layout.tsx
-import "./globals.css"; // ملف Tailwind
-import type { ReactNode } from "react";
-import Navbar from "../components/Navbar"; // تأكدي من المسار الصحيح
+import "./globals.css";
+import Navbar from "@/components/Navbar";
 
-export const metadata = {
-  title: "HealthCare",
-  description: "Healthcare site",
-};
-
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body>
         <Navbar />
-        <main>{children}</main>
+        {children}
       </body>
     </html>
   );
 }
+
