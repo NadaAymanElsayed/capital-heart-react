@@ -4,15 +4,15 @@ import { FaFacebookF, FaTwitter ,FaLinkedinIn, FaYoutube, FaInstagram , FaPhoneA
 export default function Footer() {
   return (
     <footer className="bg-[#111] text-gray-300">
-       <div className="bg-black">
-        <div className="border-b border-gray-700 bg-white h-20 w-[1200px] mx-auto rounded-md pr-20">
+       <div className="bg-gray">
+        <div className="border-b border-gray-700 bg-white h-20 w-[1235px] mx-auto rounded-md pr-20">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-0 h-full">
           
           <div className="flex items-center gap-3 h-full">
             <img
               src="/assets/logoFooter.png"
               alt="Logo"
-              className="h-full w-auto rounded-md" 
+              className="h-full w-68 rounded-md" 
             />
 <div className="flex items-center gap-2 pl-40">
   <h1 className="text-black font-bold text-2xl">

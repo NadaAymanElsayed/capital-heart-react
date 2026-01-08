@@ -1,7 +1,7 @@
 export default function HelpSection() {
   return (
     <section className="bg-[#1b1b1b] pt-100 pb-24">
-      <div className="container mx-auto text-white">
+      <div className="container mx-auto text-white pl-5">
 
         <p className="text-sm uppercase tracking-widest text-gray-400">
          SERVICES AT ONE GLANCE

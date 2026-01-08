@@ -47,13 +47,15 @@ export default function DoctorHero() {
           ].map((item, index) => (
             <div
               key={index}
-              className="bg-[#222] text-white w-full max-w-[240px] mx-auto text-center shadow-lg flex flex-col"
+              className="bg-[#222] text-white w-full max-w-[180px] mx-auto text-center shadow-lg flex flex-col"
             >
-              <img
-                src={`/assets/doc${index + 1}.png`}
-                className="w-full h-[200px] object-cover"
-                alt={item.name}
-              />
+ <img
+  src={`/assets/doc${index + 1}.png`}
+  className="w-full h-[200px] object-contain bg-[#222]"
+  alt={item.name}
+/>
+
+
               <p className="text-[11px] text-gray-300 mt-2 leading-relaxed">
                 {item.job}
               </p>
