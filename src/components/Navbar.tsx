@@ -1,11 +1,19 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "@/contexts/ThemeContext";
+import { Moon, Sun } from "lucide-react";
+
+
+
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+    const { theme, toggleTheme } = useContext(ThemeContext);
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black shadow-md">
@@ -54,14 +62,24 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="hidden md:flex">
-          <Link
-            href="/appointment"
-            className="bg-[#FB8C00] hover:bg-[#e27e00] text-white px-5 py-2 rounded-full font-semibold shadow"
-          >
-            Book Appointment
-          </Link>
-        </div>
+  <div className="hidden md:flex items-center gap-4">
+  {mounted && (
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded-md bg-[#FB8C00] hover:bg-[#e27e00] text-white shadow-md"
+    >
+      {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+    </button>
+  )}
+
+  <Link
+    href="/appointment"
+    className="bg-[#FB8C00] hover:bg-[#e27e00] text-white px-5 py-2 rounded-full font-semibold shadow"
+  >
+    Book Appointment
+  </Link>
+</div>
+
 
         <button
           className="md:hidden text-white"

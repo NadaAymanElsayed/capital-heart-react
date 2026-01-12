@@ -1,14 +1,19 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useState, useContext, useEffect } from "react";
+import { Menu, X, Moon, Sun } from "lucide-react";
 import NavbarLinks from "./NavbarLinks";
 import MobileMenu from "./MobileMenu";
 import Link from "next/link";
 import Button from "@/components/Button";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-black shadow-md">
@@ -26,7 +31,16 @@ export default function Navbar() {
           <NavbarLinks />
         </div>
 
-        <div className="hidden md:flex">
+        <div className="hidden md:flex items-center gap-4">
+          {mounted && (
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-md bg-orange-500 text-white hover:bg-orange-600 shadow-md"
+            >
+              {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            </button>
+          )}
+
           <Button href="/appointment" variant="primary">
             Book Appointment
           </Button>
@@ -37,7 +51,13 @@ export default function Navbar() {
         </button>
       </div>
 
-      {open && <MobileMenu closeMenu={() => setOpen(false)} />}
+{open && (
+  <MobileMenu
+    closeMenu={() => setOpen(false)}
+    toggleTheme={toggleTheme}  
+    theme={theme}            
+  />
+)}
     </nav>
   );
 }

@@ -1,6 +1,12 @@
+
+"use client";
 import Image from "next/image";
+import { useContext } from "react";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 export default function HeroBackground() {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <>
       <Image
@@ -9,7 +15,11 @@ export default function HeroBackground() {
         fill
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/50" />
+      <div
+        className={`absolute inset-0 ${
+          theme === "dark" ? "bg-black/70" : "bg-black/30"
+        }`}
+      />
     </>
   );
 }

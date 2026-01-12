@@ -1,8 +1,9 @@
+"use client";
 import Section3Card from "./Section3Card";
 import Section3InfoBox from "./Section3InfoBox";
 
 export default function Section3Content() {
-  const cards = [
+ const cards = [
     {
       image: "/assets/s3_1.png",
       subtitle: "A better life",
@@ -31,9 +32,7 @@ export default function Section3Content() {
 
   return (
     <div className="container mx-auto relative z-10 py-20 px-4 sm:px-10 overflow-x-hidden">
-      
-<div className="flex flex-row overflow-x-auto md:overflow-x-hidden gap-4 md:grid md:grid-cols-5 md:gap-3 pb-4">
-
+      <div className="flex flex-row overflow-x-auto md:overflow-x-hidden gap-4 md:grid md:grid-cols-5 md:gap-3 pb-4">
         {cards.map((card, index) => (
           <div key={index} className="flex-shrink-0 w-64 md:w-full">
             <Section3Card
@@ -45,12 +44,11 @@ export default function Section3Content() {
           </div>
         ))}
 
-        {/* Info box in same row */}
         <div className="flex-shrink-0 w-64 md:w-full">
           <Section3InfoBox />
         </div>
-
       </div>
     </div>
   );
 }
+

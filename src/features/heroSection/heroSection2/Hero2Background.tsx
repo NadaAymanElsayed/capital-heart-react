@@ -1,6 +1,9 @@
 "use client";
+import { useContext } from "react";
+import { ThemeContext } from "@/contexts/ThemeContext";
 
 export default function Section2Background() {
+   const { theme } = useContext(ThemeContext);
   return (
     <div className="absolute inset-0">
       <img
@@ -8,7 +11,9 @@ export default function Section2Background() {
         alt="background"
         className="w-full h-full object-cover"
       />
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div    className={`absolute inset-0 ${
+          theme === "dark" ? "bg-black/70" : "bg-black/30"
+        }`}></div>
     </div>
   );
 }
