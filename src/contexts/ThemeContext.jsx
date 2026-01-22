@@ -1,20 +1,43 @@
-// src/contexts/ThemeContext.jsx
 "use client";
-import { createContext, useState } from "react";
+import { createContext, useReducer, useMemo } from "react";
 
 export const ThemeContext = createContext();
 
+const initialState = {
+  theme: "dark",
+};
+
+function themeReducer(state, action) {
+  switch (action.type) {
+    case "TOGGLE_THEME": {
+      const newTheme = state.theme === "light" ? "dark" : "light";
+      document.body.className = newTheme;
+      return { theme: newTheme };
+    }
+    default:
+      return state;
+  }
+}
+
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
+  const [state, dispatch] = useReducer(themeReducer, initialState);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
-    document.body.className = theme === "light" ? "dark" : "light";
+    dispatch({ type: "TOGGLE_THEME" });
   };
 
+  const value = useMemo(
+    () => ({
+      theme: state.theme,
+      toggleTheme,
+    }),
+    [state.theme]
+  );
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={value}>
       {children}
     </ThemeContext.Provider>
   );
 }
+

@@ -1,11 +1,15 @@
-
 "use client";
 import Image from "next/image";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import { ThemeContext } from "@/contexts/ThemeContext";
 
 export default function HeroBackground() {
   const { theme } = useContext(ThemeContext);
+
+  const overlayClass = useMemo(
+    () => (theme === "dark" ? "bg-black/70" : "bg-black/30"),
+    [theme]
+  );
 
   return (
     <>
@@ -14,11 +18,11 @@ export default function HeroBackground() {
         alt="Healthcare Hero"
         fill
         className="object-cover"
+        priority
       />
+
       <div
-        className={`absolute inset-0 ${
-          theme === "dark" ? "bg-black/70" : "bg-black/30"
-        }`}
+        className={`absolute inset-0 transition-all duration-300 ease-in-out ${overlayClass}`}
       />
     </>
   );
